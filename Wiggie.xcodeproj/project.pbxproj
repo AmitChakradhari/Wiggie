@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8D921142619766F00D576ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D921132619766F00D576ED /* AppDelegate.swift */; };
+		E8D921162619766F00D576ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D921152619766F00D576ED /* SceneDelegate.swift */; };
+		E8D921182619766F00D576ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D921172619766F00D576ED /* ViewController.swift */; };
+		E8D9211B2619766F00D576ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D921192619766F00D576ED /* Main.storyboard */; };
+		E8D9211E2619766F00D576ED /* Wiggie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8D9211C2619766F00D576ED /* Wiggie.xcdatamodeld */; };
+		E8D921202619767000D576ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D9211F2619767000D576ED /* Assets.xcassets */; };
+		E8D921232619767000D576ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D921212619767000D576ED /* LaunchScreen.storyboard */; };
+		E8D9212B2619785F00D576ED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D9212A2619785F00D576ED /* Model.swift */; };
+		E8D9212E261978CC00D576ED /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D9212D261978CC00D576ED /* NetworkWorker.swift */; };
+		E8D92131261985E400D576ED /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D92130261985E400D576ED /* GridCollectionViewCell.swift */; };
+		E8D921342619860500D576ED /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D921332619860500D576ED /* ListCollectionViewCell.swift */; };
+		F3125EE73978FED03666BCBD /* Pods_Wiggie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BB5AAF5BA321B52EE6BDC7 /* Pods_Wiggie.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A7E68F6D7777FF5F5820E27 /* Pods-Wiggie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wiggie.release.xcconfig"; path = "Target Support Files/Pods-Wiggie/Pods-Wiggie.release.xcconfig"; sourceTree = "<group>"; };
+		39BB5AAF5BA321B52EE6BDC7 /* Pods_Wiggie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wiggie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4B7C05845534578C22FE052 /* Pods-Wiggie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wiggie.debug.xcconfig"; path = "Target Support Files/Pods-Wiggie/Pods-Wiggie.debug.xcconfig"; sourceTree = "<group>"; };
+		E8D921102619766F00D576ED /* Wiggie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wiggie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D921132619766F00D576ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8D921152619766F00D576ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E8D921172619766F00D576ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8D9211A2619766F00D576ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8D9211D2619766F00D576ED /* Wiggie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wiggie.xcdatamodel; sourceTree = "<group>"; };
+		E8D9211F2619767000D576ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8D921222619767000D576ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8D921242619767000D576ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D9212A2619785F00D576ED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E8D9212D261978CC00D576ED /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
+		E8D92130261985E400D576ED /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		E8D921332619860500D576ED /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8D9210D2619766F00D576ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3125EE73978FED03666BCBD /* Pods_Wiggie.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E054ECB6684E05BD0CF1DC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4B7C05845534578C22FE052 /* Pods-Wiggie.debug.xcconfig */,
+				2A7E68F6D7777FF5F5820E27 /* Pods-Wiggie.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E8D921072619766F00D576ED = {
+			isa = PBXGroup;
+			children = (
+				E8D921122619766F00D576ED /* Wiggie */,
+				E8D921112619766F00D576ED /* Products */,
+				1E054ECB6684E05BD0CF1DC1 /* Pods */,
+				F605C6FA9AE3D05B1A6CE395 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E8D921112619766F00D576ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D921102619766F00D576ED /* Wiggie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D921122619766F00D576ED /* Wiggie */ = {
+			isa = PBXGroup;
+			children = (
+				E8D921132619766F00D576ED /* AppDelegate.swift */,
+				E8D921152619766F00D576ED /* SceneDelegate.swift */,
+				E8D921172619766F00D576ED /* ViewController.swift */,
+				E8D92132261985EB00D576ED /* Views */,
+				E8D9212F261978DD00D576ED /* Networking */,
+				E8D9212C2619786400D576ED /* Model */,
+				E8D921192619766F00D576ED /* Main.storyboard */,
+				E8D9211F2619767000D576ED /* Assets.xcassets */,
+				E8D921212619767000D576ED /* LaunchScreen.storyboard */,
+				E8D921242619767000D576ED /* Info.plist */,
+				E8D9211C2619766F00D576ED /* Wiggie.xcdatamodeld */,
+			);
+			path = Wiggie;
+			sourceTree = "<group>";
+		};
+		E8D9212C2619786400D576ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E8D9212A2619785F00D576ED /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E8D9212F261978DD00D576ED /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E8D9212D261978CC00D576ED /* NetworkWorker.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E8D92132261985EB00D576ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8D92130261985E400D576ED /* GridCollectionViewCell.swift */,
+				E8D921332619860500D576ED /* ListCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F605C6FA9AE3D05B1A6CE395 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39BB5AAF5BA321B52EE6BDC7 /* Pods_Wiggie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8D9210F2619766F00D576ED /* Wiggie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D921272619767000D576ED /* Build configuration list for PBXNativeTarget "Wiggie" */;
+			buildPhases = (
+				8EE7653B13C37C3B9FB57269 /* [CP] Check Pods Manifest.lock */,
+				E8D9210C2619766F00D576ED /* Sources */,
+				E8D9210D2619766F00D576ED /* Frameworks */,
+				E8D9210E2619766F00D576ED /* Resources */,
+				50FE61CA38F4B7F2A127013A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wiggie;
+			productName = Wiggie;
+			productReference = E8D921102619766F00D576ED /* Wiggie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8D921082619766F00D576ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Amit  Chakradhari";
+				TargetAttributes = {
+					E8D9210F2619766F00D576ED = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = E8D9210B2619766F00D576ED /* Build configuration list for PBXProject "Wiggie" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8D921072619766F00D576ED;
+			productRefGroup = E8D921112619766F00D576ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8D9210F2619766F00D576ED /* Wiggie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8D9210E2619766F00D576ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D921232619767000D576ED /* LaunchScreen.storyboard in Resources */,
+				E8D921202619767000D576ED /* Assets.xcassets in Resources */,
+				E8D9211B2619766F00D576ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50FE61CA38F4B7F2A127013A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wiggie/Pods-Wiggie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wiggie/Pods-Wiggie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wiggie/Pods-Wiggie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EE7653B13C37C3B9FB57269 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wiggie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8D9210C2619766F00D576ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D9212B2619785F00D576ED /* Model.swift in Sources */,
+				E8D921182619766F00D576ED /* ViewController.swift in Sources */,
+				E8D921342619860500D576ED /* ListCollectionViewCell.swift in Sources */,
+				E8D9212E261978CC00D576ED /* NetworkWorker.swift in Sources */,
+				E8D921142619766F00D576ED /* AppDelegate.swift in Sources */,
+				E8D92131261985E400D576ED /* GridCollectionViewCell.swift in Sources */,
+				E8D921162619766F00D576ED /* SceneDelegate.swift in Sources */,
+				E8D9211E2619766F00D576ED /* Wiggie.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E8D921192619766F00D576ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D9211A2619766F00D576ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8D921212619767000D576ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D921222619767000D576ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8D921252619767000D576ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8D921262619767000D576ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8D921282619767000D576ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4B7C05845534578C22FE052 /* Pods-Wiggie.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DKTFTJ4C75;
+				INFOPLIST_FILE = Wiggie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chakradhari.amit.Wiggie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8D921292619767000D576ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A7E68F6D7777FF5F5820E27 /* Pods-Wiggie.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DKTFTJ4C75;
+				INFOPLIST_FILE = Wiggie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chakradhari.amit.Wiggie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8D9210B2619766F00D576ED /* Build configuration list for PBXProject "Wiggie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D921252619767000D576ED /* Debug */,
+				E8D921262619767000D576ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8D921272619767000D576ED /* Build configuration list for PBXNativeTarget "Wiggie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D921282619767000D576ED /* Debug */,
+				E8D921292619767000D576ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8D9211C2619766F00D576ED /* Wiggie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8D9211D2619766F00D576ED /* Wiggie.xcdatamodel */,
+			);
+			currentVersion = E8D9211D2619766F00D576ED /* Wiggie.xcdatamodel */;
+			path = Wiggie.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E8D921082619766F00D576ED /* Project object */;
+}
