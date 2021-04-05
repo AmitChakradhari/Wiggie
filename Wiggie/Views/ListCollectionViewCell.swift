@@ -14,8 +14,11 @@ class ListCollectionViewCell: UICollectionViewCell {
     let imageView = UIImageView(frame: .zero)
     let imageLabel = UILabel(frame: .zero)
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .lightGray
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -27,7 +30,7 @@ class ListCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(imageLabel)
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1),

@@ -9,11 +9,17 @@
 import UIKit
 
 protocol Coordinator: class {
-    func start()
+    func start(id: String?)
+    func goTo(route: Route)
 }
 
+enum Route {
+    case Home
+    case Detail(imdbId: String)
+}
 
 class ApplicationCoordinator: Coordinator {
+    
     let window: UIWindow
     let rootViewController: UINavigationController
     
@@ -26,10 +32,32 @@ class ApplicationCoordinator: Coordinator {
         
     }
     
-    func start() {
-        let viewController = ViewController()
-        viewController.coordinator = self
-        rootViewController.pushViewController(viewController, animated: false)
+    func start(id: String?) {
+        if let imdbId = id {
+            goTo(route: .Detail(imdbId: imdbId))
+        } else {
+            goTo(route: .Home)
+        }
+    }
+    
+    func goTo(route: Route) {
+        switch route {
+        case .Home:
+            let viewController = ViewController()
+            viewController.coordinator = self
+            refreshView(vc: viewController)
+            break
+        case .Detail(let imdbId):
+            let detailViewController = DetailViewController()
+            detailViewController.coordinator = self
+            detailViewController.imdbId = imdbId
+            refreshView(vc: detailViewController)
+            break
+        }
+    }
+    
+    func refreshView(vc: UIViewController) {
+        rootViewController.pushViewController(vc, animated: false)
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
     }

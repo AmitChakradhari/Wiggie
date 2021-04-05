@@ -19,6 +19,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .lightGray
+        
         imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
@@ -42,7 +44,7 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         NetworkWorker.getMovieDetail(imdbId: imdbId) { movieDetail, error in
             guard error == nil else {
-                print("error in details",error)
+                print("error in details",error ?? "")
                 return
             }
             if let details = movieDetail, let imageUrl = URL(string: details.Poster ?? "") {

@@ -16,17 +16,21 @@ class GridCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+                
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
         
-        contentView.backgroundColor = .orange
+        backgroundColor = .lightGray
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .redraw
         imageView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         contentView.addSubview(imageView)
         
         imageLabel.translatesAutoresizingMaskIntoConstraints = false
         imageLabel.textAlignment = .center
         imageLabel.numberOfLines = 1
+        imageLabel.setContentCompressionResistancePriority(.init(751), for: .vertical)
         contentView.addSubview(imageLabel)
         
         NSLayoutConstraint.activate([
@@ -34,7 +38,7 @@ class GridCollectionViewCell: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
-            imageLabel.heightAnchor.constraint(equalToConstant: 24),
+            //imageLabel.heightAnchor.constraint(equalToConstant: 24),
             imageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             imageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)

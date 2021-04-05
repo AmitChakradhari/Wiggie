@@ -167,7 +167,7 @@ extension ViewController: UICollectionViewDelegate {
         view.addSubview(toggleButton)
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
-        collectionView.backgroundColor = .gray
+        collectionView.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(GridCollectionViewCell.self, forCellWithReuseIdentifier: GridCollectionViewCell.cellReuseIdentifier)
         collectionView.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: ListCollectionViewCell.cellReuseIdentifier)
@@ -189,7 +189,7 @@ extension ViewController: UICollectionViewDelegate {
         
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             searchBar.trailingAnchor.constraint(equalTo: toggleButton.leadingAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 44),
             toggleButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -231,10 +231,11 @@ extension ViewController: UICollectionViewDelegate {
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
-                heightDimension: .absolute(64)
+                heightDimension: .absolute(72)
             ),
             subitems: [item]
         )
+        group.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 2, bottom: 3, trailing: 2)
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
