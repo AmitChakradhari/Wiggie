@@ -31,29 +31,52 @@ class NetworkWorker: NSObject {
                 }
         }
     }
+    
+    class func getMovieDetail(imdbId: String, completion: @escaping (MovieDetail?, Error?) -> ()) {
+        AF.request(ApiRouter.getMovieDetail(imdbId))
+            .validate()
+            .responseData { response in
+                
+                switch response.result {
+                case .success:
+                    if let responseData = response.data {
+                        do {
+                            let movieDetail = try JSONDecoder().decode(MovieDetail.self, from: responseData)
+                            completion(movieDetail, nil)
+                        }
+                        catch {
+                            completion(nil, error)
+                        }
+                    }
+                case let .failure(error):
+                    completion(nil, error)
+                }
+        }
+    }
 }
 
 fileprivate enum ApiRouter: URLRequestConvertible {
     
     case getMovies(String, Int)
+    case getMovieDetail(String)
     
     var baseUrl: String {
         switch self {
-        case .getMovies:
+        case .getMovies, .getMovieDetail:
             return "https://www.omdbapi.com"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getMovies:
+        case .getMovies, .getMovieDetail:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .getMovies:
+        case .getMovies, .getMovieDetail:
             return "/"
         }
     }
@@ -65,6 +88,11 @@ fileprivate enum ApiRouter: URLRequestConvertible {
                 "apiKey": "367ee4ae",
                 "s": keyword,
                 "page": page
+            ]
+        case .getMovieDetail(let imdbId):
+            return [
+                "i": imdbId,
+                "apiKey": "367ee4ae"
             ]
         }
     }

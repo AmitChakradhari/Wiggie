@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import RxSwift
+import RxCocoa
 
 enum Section: String, CaseIterable {
     case movies = "Movies"
@@ -20,6 +22,7 @@ enum CurrentLayout {
 
 class ViewController: UIViewController {
 
+    weak var coordinator: ApplicationCoordinator?
     var searchBar: UISearchBar! = nil
     var toggleButton: UIButton! = nil
     var collectionView: UICollectionView! = nil
@@ -58,9 +61,17 @@ class ViewController: UIViewController {
         }
     }
     
+    let viewModel = ViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidLoad() {
@@ -69,6 +80,27 @@ class ViewController: UIViewController {
         
         configureView()
         configureDataSource(layout: .list)
+        
+        viewModel.loading
+            .observe(on: MainScheduler.instance).bind(to: self.rx.isPageRefreshing).disposed(by: disposeBag)
+        
+        viewModel.movies
+            .subscribe(on: MainScheduler.instance)
+            .subscribe(onNext: { wrappedMovies in
+                if let movies = wrappedMovies {
+                    self.applySnapshot(movieList: movies, page: self.pageNumber)
+                } else {
+                    self.applySnapshot(movieList: nil, page: self.pageNumber)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.error
+            .subscribe(on: MainScheduler.instance)
+            .subscribe(onNext: { error in
+                self.handle(error)
+            })
+            .disposed(by: disposeBag)
     }
 
 
@@ -91,25 +123,10 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
 
-    func fetchMovies(searchText: String, page: Int) {
-        self.isPageRefreshing = true
-        NetworkWorker.getMovies(keyword: searchText, page: page, completion: { movieResponses, error in
-            
-            if let error = error {
-                self.handle(error)
-            }
-            if let movies = movieResponses?.Search {
-                self.applySnapshot(movieList: movies, page: page)
-            } else {
-                self.applySnapshot(movieList: nil, page: page)
-            }
-            self.isPageRefreshing = false
-        })
-    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text {
             searchKeyword = searchText
-            fetchMovies(searchText: searchText, page: pageNumber)
+            viewModel.fetchMovies(searchText: searchText, page: pageNumber)
         }
         searchBar.resignFirstResponder()
     }
@@ -120,13 +137,18 @@ extension ViewController: UISearchBarDelegate {
             if let searchText = searchBar.text {
                 self.searchKeyword = searchText
                 self.pageNumber = 1
-                self.fetchMovies(searchText: searchText, page: self.pageNumber)
+                self.viewModel.fetchMovies(searchText: searchText, page: self.pageNumber)
             }
         }
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        coordinator?.presentDetail(imdbId: movieDataSource[indexPath.row].imdbID ?? "")
+    }
     
     func configureView() {
         searchBar = UISearchBar(frame: .zero)
@@ -284,7 +306,7 @@ extension ViewController: UICollectionViewDelegate {
                 isPageRefreshing = true
                 print(pageNumber, "pageNumber")
                 pageNumber += 1
-                fetchMovies(searchText: searchKeyword, page: pageNumber)
+                viewModel.fetchMovies(searchText: searchKeyword, page: pageNumber)
             }
         }
     }
@@ -308,10 +330,11 @@ private extension ViewController {
             style: .default,
             handler: { [weak self] _ in
                 guard let self = self else { return }
-                self.fetchMovies(searchText: self.searchKeyword, page: self.pageNumber)
+                self.viewModel.fetchMovies(searchText: self.searchKeyword, page: self.pageNumber)
             }
         ))
         
         present(alert, animated: true)
     }
 }
+

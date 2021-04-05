@@ -42,3 +42,8 @@ struct MovieResponse: Codable {
     let Error: String?
 }
 
+
+struct MovieDetail: Codable {
+    let Title: String?
+    let Poster: String?
+}
